@@ -22,7 +22,7 @@ from bai6 import fib, fib2
 # from bai6 import fib as fabonacci
 import importlib
 
-import bai6
+import bai6 as bai6
 importlib.reload(bai6)
 # fib(6)
 # fib2(5)
@@ -58,8 +58,39 @@ print("dir(10)= ", dir(10))
 # 6.4:Packages(gói): 
 # import trực tiếp function trong module con của package
 # from utils.string_utils import * # utils là package, string_utils là module con, * là tất cả các function trong module con
-from utils.string_utils import *
+# from utils.string_utils import *
+# trong file __init__.py đã khai báo nên ở đây bạn chỉ cần khai báo chung là có tất cả các module đã khai báo trong  __init__.py
+from utils import *
 print(to_upper("hello world"))
 print(count_chars("hello world"))
 # đối với version python >3.3 thì không cần file __init__.py trong thư mục package nữa, nhưng nếu có thì nó sẽ được chạy khi import package đó
+
+# ------------------------------
+# 6.4.1. Importing * From a Package
+# bạn có thể khai báo các module con vào file __init__.py và khi import * thì sẽ gọi được tất cả các module đã khai báo tring __init__.py
+# ---------------------------------
+# 6.4.2: Intra-package References (tham chiếu nội bộ trong package)
+# ví dụ trong module surround:
+# from . import string_utils
+# from .. import formats
+# from ..filters import equalizer
+# --> sử dụng . --> để import package hiện tại
+# --> sử dụng .. --> để import package cha
+#  --> sử dụng ... --> để import lên thêm 1 cấp nữa
+# sound/
+# │
+# ├── effects/
+# │   ├── echo.py
+# │   └── surround.py
+# │
+# ├── filters/
+# │   └── equalizer.py
+# │
+# └── formats/
+# Trong file surround.py:
+# from . import echo
+# from ..filters import equalizer
+# cách chạy đúng: python -m sound.effects.surround
+# -------------------------------
+# 6.4.3: Packagé in multiple Directories (gói trong nhiều thư mục)
 
