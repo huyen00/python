@@ -1,0 +1,6 @@
+Hello Python
+ Thêm 1 dòng mới vào file
+ Thêm 1 dòng mới vào file 2
+ Thêm 1 dòng mới vào file 3
+ Thêm 1 dòng mới vào file 4
+Helooo
