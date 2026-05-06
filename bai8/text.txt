@@ -1,0 +1,45 @@
+ 8. Errors and Exceptions
+ 8.1: syntax Errors (Lỗi cú pháp)
+while True:
+    print('Hello world')
+ ===============
+     File "<stdin>", line 1
+     while True print('Hello world')
+                ^^^^^
+     SyntaxError: invalid syntax
+
+ python in ra  dòng bị lỗi
+ hiển thị ^ để chỉ vị trí phát hiện lỗi
+ <stdin> → code nhập trực tiếp (terminal)
+ line 1 → dòng bị lỗi
+ ----------------------------------------
+ so sánh nhanh
+  Loại lỗi         KHi nào xảy ra
+  Syntax Error     sai cú pháp
+  Runtime Error    Lỗi khi chạy
+  Logic Error      chạy đúng nhưng sai kết quả
+ ------> xảy ra trước khi chạy
+ ==============================================
+ 8.2: Exceptions (Ngoại lệ)
+ các exception có sắn trong python
+ 1. ZeroDivíionError
+ 2.NameError
+ 3.TypeError
+  --> phần còn lại sau type: giải thích nguyên nhân cụ thể
+ Traceback (most recent call last):
+   File "<stdin>", line 1, in <module>
+ --> cho biết file nào bị lỗi/ dòng nào bị lỗi
+--------> xảy ra khi đang chạy  
+===================================
+3. try-except (bắt lỗi exception) để chương trình không bị crash
+Cú pháp:
+try:
+    #code có thể gây Lỗi
+except:
+    #code xử lý Lỗi
+
+Ví dụ:
+try: 
+    x = 10/0
+except:
+    print('Có lỗi xảy ra')
